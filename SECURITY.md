@@ -10,4 +10,4 @@ Scraped HTML, JSON-LD and CSV text are untrusted. Canonical descriptions remove 
 
 Exported media links can include source-specific URL parameters. Exports, caches and logs are Git-ignored but can contain source content; inspect them before sharing. No generated export should be committed to the public repository. The privacy checker is a release aid, not a complete secrets or personal-data detector.
 
-For a vulnerability, use the repository's private security reporting if enabled. Do not post credentials, exploit payloads involving a real store, or private exports in a public issue. Until private reporting is configured, share only a minimal synthetic description in public and arrange a private channel with the maintainer.
+For a vulnerability, use GitHub's **Report a vulnerability** option in the repository's Security tab. Private vulnerability reporting is enabled. Do not post credentials, exploit payloads involving a real store, or private exports in a public issue.
