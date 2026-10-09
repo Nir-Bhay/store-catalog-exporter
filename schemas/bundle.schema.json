@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Store Catalog Exporter canonical bundle v1",
+  "type": "object",
+  "required": ["schema_version", "tool_version", "created_at", "source", "adapter", "products", "collections", "memberships", "coverage", "extraction_errors"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "tool_version": {"type": "string"},
+    "created_at": {"type": "string"},
+    "source": {"type": "string", "format": "uri"},
+    "adapter": {"enum": ["shopify", "jsonld"]},
+    "products": {"type": "array", "items": {"$ref": "#/$defs/product"}},
+    "collections": {"type": "array", "items": {"type": "object", "required": ["handle", "title", "membership_status"]}},
+    "memberships": {"type": "array", "items": {"type": "object", "required": ["product_handle", "collection_handle"], "properties": {"product_handle": {"type": "string"}, "collection_handle": {"type": "string"}}}},
+    "coverage": {"type": "object", "required": ["catalog", "collections", "selection_limited", "discovered_products"]},
+    "extraction_errors": {"type": "array", "items": {"type": "object", "required": ["stage", "handle", "message"]}}
+  },
+  "$defs": {
+    "product": {
+      "type": "object",
+      "required": ["handle", "source_id", "url", "title", "description_html", "vendor", "product_type", "tags", "currency", "options", "variants", "images", "media", "media_scan_status", "collection_handles", "provenance"],
+      "properties": {
+        "handle": {"type": "string"}, "source_id": {"type": "string"}, "url": {"type": "string"},
+        "title": {"type": "string"}, "description_html": {"type": "string"}, "vendor": {"type": "string"},
+        "product_type": {"type": "string"}, "tags": {"type": "array", "items": {"type": "string"}},
+        "currency": {"type": ["string", "null"]},
+        "options": {"type": "array", "items": {"type": "object", "required": ["name", "position"]}},
+        "variants": {"type": "array", "items": {"$ref": "#/$defs/variant"}},
+        "images": {"type": "array", "items": {"type": "object", "required": ["url", "position", "alt"]}},
+        "media": {"type": "array", "items": {"type": "object", "required": ["kind", "position", "url", "preview_url", "sources"]}},
+        "media_scan_status": {"enum": ["ok", "failed", "not_requested", "structured_data_only"]},
+        "collection_handles": {"type": "array", "items": {"type": "string"}}, "provenance": {"type": "object"}
+      }
+    },
+    "variant": {
+      "type": "object",
+      "required": ["id", "sku", "barcode", "options", "price", "compare_at_price", "available", "grams", "requires_shipping", "taxable", "image_url", "image_id", "inventory_quantity"],
+      "properties": {
+        "id": {"type": "string"}, "sku": {"type": "string"}, "barcode": {"type": "string"},
+        "options": {"type": "array", "items": {"type": ["string", "null"]}},
+        "price": {"type": ["string", "null"]}, "compare_at_price": {"type": ["string", "null"]},
+        "available": {"type": ["boolean", "null"]}, "grams": {"type": ["number", "string", "null"]},
+        "requires_shipping": {"type": ["boolean", "null"]}, "taxable": {"type": ["boolean", "null"]},
+        "image_url": {"type": "string"}, "image_id": {"type": "string"}, "inventory_quantity": {"type": "null"}
+      }
+    }
+  }
+}

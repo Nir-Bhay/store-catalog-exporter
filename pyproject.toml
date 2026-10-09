@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "store-catalog-exporter"
+version = "0.1.0"
+description = "Export public Shopify catalogs and JSON-LD products to CSV, with image/video manifests and honest coverage reports."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Store Catalog Exporter contributors"}]
+keywords = ["shopify", "catalog", "csv", "product-export", "scraping", "json-ld", "migration", "ai-agents"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Internet :: WWW/HTTP",
+  "Topic :: Utilities",
+]
+
+[project.urls]
+Homepage = "https://github.com/Nir-Bhay/store-catalog-exporter"
+Repository = "https://github.com/Nir-Bhay/store-catalog-exporter"
+Documentation = "https://github.com/Nir-Bhay/store-catalog-exporter#readme"
+Issues = "https://github.com/Nir-Bhay/store-catalog-exporter/issues"
+
+[project.scripts]
+catalog-export = "catalog_exporter.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["catalog_exporter*"]

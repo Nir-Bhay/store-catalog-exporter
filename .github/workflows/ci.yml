@@ -1,0 +1,23 @@
+name: Offline tests
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ['3.10', '3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m unittest discover -s tests -v
+      - run: python -m catalog_exporter convert examples/sample-feed.json --source https://store.example --media-input examples/sample-media.json --output exports/demo --zip
+      - run: python -m catalog_exporter validate exports/demo/bundle.json
+      - run: python scripts/check_public_repo.py --tracked

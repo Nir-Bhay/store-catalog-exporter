@@ -1,0 +1,17 @@
+[
+  {
+    "handle": "woven-throw",
+    "payload": {
+      "price": 4990,
+      "media": [
+        {"id": 3001, "media_type": "image", "position": 1, "alt": "Woven throw in a room", "src": "https://cdn.example/throw-sand.jpg", "preview_image": {"src": "https://cdn.example/throw-sand.jpg"}},
+        {"id": 4001, "media_type": "video", "position": 2, "alt": "Weaving demonstration", "duration": 12500, "preview_image": {"src": "https://cdn.example/video-poster.jpg"}, "sources": [
+          {"url": "https://cdn.example/weaving-720.mp4", "format": "mp4", "mime_type": "video/mp4", "height": 720, "width": 1280},
+          {"url": "https://cdn.example/weaving-1080.mp4", "format": "mp4", "mime_type": "video/mp4", "height": 1080, "width": 1920},
+          {"url": "https://cdn.example/weaving.m3u8", "format": "m3u8", "mime_type": "application/x-mpegURL", "height": 1080, "width": 1920}
+        ]}
+      ]
+    }
+  },
+  {"handle": "ceramic-cup", "payload": {"media": []}}
+]

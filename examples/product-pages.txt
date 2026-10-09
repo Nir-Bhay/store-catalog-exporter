@@ -1,0 +1,3 @@
+# Synthetic placeholders. Replace with authorized public product URLs on one host.
+https://store.example/products/woven-throw
+https://store.example/products/ceramic-cup

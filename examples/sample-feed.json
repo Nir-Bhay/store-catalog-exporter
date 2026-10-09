@@ -1,0 +1,34 @@
+{
+  "products": [
+    {
+      "id": 1001,
+      "handle": "woven-throw",
+      "title": "Woven Throw — Sand",
+      "body_html": "<p>A soft woven throw, made for everyday comfort.</p>",
+      "vendor": "Example Studio",
+      "product_type": "Throws",
+      "tags": ["woven", "home"],
+      "options": [{"name": "Size", "position": 1}],
+      "variants": [
+        {"id": 2001, "sku": "THROW-S", "barcode": "000000001234", "option1": "Small", "price": "49.90", "compare_at_price": "59.90", "grams": 450, "taxable": true, "requires_shipping": true, "available": true, "featured_image": {"id": 3001, "src": "https://cdn.example/throw-sand.jpg"}},
+        {"id": 2002, "sku": "THROW-L", "option1": "Large", "price": "69.90", "grams": 700, "taxable": true, "requires_shipping": true, "available": false}
+      ],
+      "images": [
+        {"id": 3001, "src": "https://cdn.example/throw-sand.jpg", "position": 1, "alt": "Sand-colored woven throw", "width": 1600, "height": 1600},
+        {"id": 3002, "src": "https://cdn.example/throw-detail.jpg", "position": 2, "alt": "Close-up of the woven texture", "width": 1600, "height": 1200}
+      ]
+    },
+    {
+      "id": 1002,
+      "handle": "ceramic-cup",
+      "title": "Ceramic Cup",
+      "body_html": "<p>A glazed ceramic cup.</p>",
+      "vendor": "Example Studio",
+      "product_type": "Ceramics",
+      "tags": "handmade, home",
+      "options": [{"name": "Title", "position": 1}],
+      "variants": [{"id": 2003, "sku": "CUP-01", "option1": "Default Title", "price": "24.00", "grams": 0, "taxable": true, "requires_shipping": true}],
+      "images": [{"id": 3003, "src": "https://cdn.example/cup.jpg", "position": 1, "alt": "Handmade ceramic cup"}]
+    }
+  ]
+}

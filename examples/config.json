@@ -1,0 +1,15 @@
+{
+  "csv_columns": {
+    "Product": "title",
+    "Handle": "handle",
+    "First price": "variants.0.price",
+    "All variants": "variants",
+    "Images": "images",
+    "Videos and other media": "media",
+    "Collections": "collection_handles",
+    "Media coverage": "media_scan_status"
+  },
+  "exclude_handles": [],
+  "exclude_tags": [],
+  "overrides": {"vendor": "Your Brand"}
+}
